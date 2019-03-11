@@ -45,7 +45,7 @@ var fs = require("fs");
 var owner = process.argv[2];
 var repo = process.argv[3];
 
-function getRepoContributors(repoOwner, repoName, cb) {
+function getRepoContributors(repoOwner, repoName, callback) {
   var options = {
     url: "https://api.github.com/repos/" + repoOwner + "/" + repoName + "/contributors",
     headers: {
@@ -54,7 +54,7 @@ function getRepoContributors(repoOwner, repoName, cb) {
     }
   };
   request(options, function (err, res, body) {
-    cb(err, body);
+    callback(err, body);
   });
 }
 
