@@ -59,7 +59,7 @@ function getRepoContributors(repoOwner, repoName, cb) {
 }
 
 getRepoContributors(owner, repo, function (err, result) {
-  if (!err) {
+  if (!err && owner && repo) {
     var output = JSON.parse(result);
 
     for (var i = 0; i < output.length; i++) {
