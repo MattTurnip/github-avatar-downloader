@@ -60,10 +60,10 @@ function getRepoContributors(repoOwner, repoName, cb) {
 
 getRepoContributors(owner, repo, function (err, result) {
   if (!err && owner && repo) {
-    var output = JSON.parse(result);
+    var urlObj = JSON.parse(result);
 
-    for (var i = 0; i < output.length; i++) {
-      downloadImageByURL(output[i].avatar_url, "avatars/" + output[i].login + ".jpg");
+    for (var i = 0; i < urlObj.length; i++) {
+      downloadImageByURL(urlObj[i].avatar_url, "avatars/" + urlObj[i].login + ".jpg");
     }
   } else {
     throw err;
@@ -76,8 +76,8 @@ function downloadImageByURL(url, filePath) {
     .on("error", function (err) {
       throw err;
     })
-    .on("response", function (response) {
-      return response.avatar_url;
+    .on("response", function (res) {
+      return res.avatar_url;
     })
     .pipe(fs.createWriteStream(filePath));
 }
