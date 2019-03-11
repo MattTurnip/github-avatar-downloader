@@ -12,9 +12,4 @@ This program should be executed from the command line, in the following manner:
 
 ... (whatever else you'd like to include)
 
-¯\_(ツ)_/¯
-¯\_(ツ)_/¯
-¯\_(ツ)_/¯
-¯\_(ツ)_/¯
-¯\_(ツ)_/¯
-¯\_(ツ)_/¯
+`¯\_(ツ)_/¯ ¯\_(ツ)_/¯ ¯\_(ツ)_/¯ ¯\_(ツ)_/¯ ¯\_(ツ)_/¯ ¯\_(ツ)_/¯`
