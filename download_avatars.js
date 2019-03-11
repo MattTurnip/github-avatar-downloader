@@ -42,7 +42,8 @@
 var request = require("request");
 var secrets = require("./secrets");
 var fs = require("fs");
-
+var owner = process.argv[2];
+var repo = process.argv[3];
 
 function getRepoContributors(repoOwner, repoName, cb) {
   var options = {
@@ -57,7 +58,7 @@ function getRepoContributors(repoOwner, repoName, cb) {
   });
 }
 
-getRepoContributors("jquery", "jquery", function (err, result) {
+getRepoContributors(owner, repo, function (err, result) {
   if (!err) {
     var output = JSON.parse(result);
 
