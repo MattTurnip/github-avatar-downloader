@@ -39,8 +39,9 @@
 //     .pipe(fs.createWriteStream(filePath));
 // }
 
+require('dotenv').config();
 var request = require("request");
-var secrets = require("./secrets");
+// var secrets = require("./secrets");
 var fs = require("fs");
 var owner = process.argv[2];
 var repo = process.argv[3];
@@ -49,8 +50,8 @@ function getRepoContributors(repoOwner, repoName, callback) {
   var options = {
     url: "https://api.github.com/repos/" + repoOwner + "/" + repoName + "/contributors",
     headers: {
-      "User-Agent": "request",
-      "Authorization": "token " + secrets.GITHUB_TOKEN
+      "User-Agent": process.env.GITHUB_USERNAME,
+      "Authorization": "token " + process.env.GITHUB_TOKEN
     }
   };
   request(options, function (err, res, body) {
